@@ -31,7 +31,7 @@ public class PlayerStone : MonoBehaviour
         int spacesToMove = TheDiceRoller.DiceTotal;
 
 
-        Tile finalTile = null;
+        Tile finalTile = currentTile;
 
         for (int i = 0; i < spacesToMove; i++)
         {
@@ -49,7 +49,9 @@ public class PlayerStone : MonoBehaviour
             return;
         }
 
-        this.transform.position = finalTile.transform.position;
+        this.transform.position = finalTile.transform.position + new Vector3(0, 0.6f, 0);
+
+        currentTile = finalTile;
 
     }
 }
